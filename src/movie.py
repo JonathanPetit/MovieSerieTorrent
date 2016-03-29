@@ -9,15 +9,17 @@ with open('terms_exlude.json') as data_file:
 
 def rename_movie(filename):
     extension = search_extension(filename)
+    language = search_language(filename)
     file_without_punc = delchars(filename)
     movie_year = delyear(file_without_punc)
     movie = Imdb_search(movie_year)
+
     if movie is not None:
         title = movie[0]["title"]
         year = movie[0]["year"]
-        return print('{} ({}){}'.format(title, year, extension))
+        return print('{}({}) -{}-{}'.format(title, year, language, extension))
     else:
-        return print('{} ({}){}'.format(movie_year[0], movie_year[1], extension))
+        return print('{}({}) -{}-{}'.format(movie_year[0], movie_year[1], language, extension))
 
 
 def delchars(filename):
@@ -48,6 +50,15 @@ def search_extension(filename):
     return ext
 
 
+def search_language(filename):
+    for languages in bdd["languages"]:
+        if languages in str(filename):
+            return languages
+        else:
+            return 'language not detected'
+
+
+
 def Imdb_search(movie):
     imdb = Imdb()
     if len(movie) == 2:
@@ -62,10 +73,6 @@ def Imdb_search(movie):
             pass
     else:
         pass
-
-
-
-
 
 if __name__ == '__main__':
     path = os.listdir('/Users/Jonh/Movies/Traitement')
