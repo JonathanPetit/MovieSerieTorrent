@@ -33,6 +33,11 @@ For Parser program:
 * GitHub : [parse-torrent-name 0.1.0](https://github.com/divijbindlish/parse-torrent-name)
 * Library : [Download](https://pypi.python.org/pypi/parse-torrent-name/)
 
+##Contact
+
+>For Bug or issues.
+petit.jonathan16@gmail.com or GitHub
+
 ##License
 
 MIT © Jonathan Petit
