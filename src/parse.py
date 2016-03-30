@@ -78,7 +78,10 @@ class Rename:
                 self.result['excess'] = self.excess
             self.file = self._delete_element(self.file, excess, 'excess').strip()
 
-        return print(self.file, '\n', self.result)
+        #Finish Process with result(title)
+        self.result['title']= self.file.strip()
+
+        return print(self.result)
 
 
 if __name__ == '__main__':
