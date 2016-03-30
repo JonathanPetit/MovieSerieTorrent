@@ -37,7 +37,7 @@ For Parser program:
 
 >For Bug or issues.
 
-* petit.jonathan16@gmail.com
+* Mail: petit.jonathan16@gmail.com
 * GitHub
 
 ##License
