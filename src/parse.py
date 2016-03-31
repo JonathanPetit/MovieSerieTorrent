@@ -3,15 +3,18 @@ import json
 import re
 
 
-class Rename:
+class Parse:
     def __init__(self):
         self.types = None
         self.group = None
         self.file = None
         self.result = None
-        self.excess = None
+        self.excess_raw = None
         self.title = None
-        with open('terms_exclude.json') as data_file:
+        self.excess_dico = None
+        self.list_excess = ['sites', 'codec', 'resolution', 'audio', 'sub', 'group', 'excess']
+
+        with open('info.json') as data_file:
             self.database = json.load(data_file)
 
     def _delchars(self, filename):
@@ -30,12 +33,21 @@ class Rename:
             filename = filename.replace(args,'')
         return filename
 
-    def _extention(self, filename):
-        pass
+    def _partition(self, dicto):
+        # Create a new dicto with useless info
+        self.excess_dico = {}
+        for elements in self.list_excess:
+            try:
+                self.excess_dico[elements] = dicto[elements]
+                del dicto[elements]
+            except KeyError:
+                    pass
+        return self.excess_dico
 
     def parse(self, filename):
         self.result = {}
-        self.excess = []
+
+        self.excess_raw = []
         self.file = self._delchars(filename)
 
         # construct dict
@@ -47,7 +59,6 @@ class Rename:
                     self.types = True
                 elif value == 'group':
                     self.group = True
-                    pass
                 else:
                     self.result[value] = match[0]
             except IndexError:
@@ -71,17 +82,19 @@ class Rename:
         # Start Process for excess elements
         while re.search(r'([\s]{2,})', str(self.file)) != None:
             excess = re.search(r'([\s]{2,}.+)', str(self.file)).group().strip()
-            self.excess.append(excess)
-            if len(self.excess) == 1:
-                self.result['excess'] = self.excess[0]
+            self.excess_raw.append(excess)
+            if len(self.excess_raw) == 1:
+                self.result['excess'] = self.excess_raw[0]
             else:
-                self.result['excess'] = self.excess
+                self.result['excess'] = self.excess_raw
             self.file = self._delete_element(self.file, excess, 'excess').strip()
 
         #Finish Process with result(title)
         self.result['title']= self.file.strip()
 
-        return print(self.result)
+        self.excess_dicto = self._partition(self.result)
+
+        return print(self.result, '\n\n', self.excess_dicto, '\n\n\n')
 
 
 if __name__ == '__main__':
@@ -90,4 +103,4 @@ if __name__ == '__main__':
         if files.endswith('.DS_Store'):
             pass
         else:
-            Rename().parse(files)
+            Parse().parse(files)
