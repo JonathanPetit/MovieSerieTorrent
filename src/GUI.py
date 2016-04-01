@@ -1,7 +1,7 @@
 from tkinter import *
 import os
 from tkinter import filedialog
-from parse import Parse
+from parser import Parser
 
 
 class GUI(Frame):
@@ -10,7 +10,8 @@ class GUI(Frame):
         self.parent = parent
         self._initUI()
         self.directory = None
-
+        self.path_directory = None
+        self.label_path_name = None
 
     def _initUI(self):
         self.parent.title("Parse-Renamer V0.1.0")
@@ -43,6 +44,7 @@ class GUI(Frame):
         self.listebox_files = Listbox(listebox)
         self.listebox_files.pack(side=TOP, fill=BOTH, expand=1, padx=50, pady=50, anchor=W)
 
+
     def _LoadDir(self):
         self.directory = filedialog.askdirectory()
         for files in os.listdir(self.directory):
@@ -50,6 +52,8 @@ class GUI(Frame):
                 pass
             else:
                 self.listebox_files.insert(END, files)
+        self.path_directory = os.path.abspath(self.directory)
+        return self.path_directory
 
     def _GetListbox_selection(self):
         files = self.listebox_files.curselection()
@@ -60,10 +64,10 @@ class GUI(Frame):
         if self.check_auto.get() == 1:
             for files in range(self.listebox_files.size()):
                 result = self.listebox_files.get(files)
-                Parse().parse(result)
+                Parser().parse(result)
         else:
             selection = self._GetListbox_selection()
-            Parse().parse(selection)
+            Parser().parse(selection)
 
 
 if __name__ == "__main__":

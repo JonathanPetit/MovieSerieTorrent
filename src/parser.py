@@ -3,7 +3,7 @@ import json
 import re
 
 
-class Parse:
+class Parser:
     def __init__(self):
         self.types = None
         self.group = None
@@ -94,7 +94,7 @@ class Parse:
 
         self.excess_dicto = self._partition(self.result)
 
-        return print(self.result, '\n\n', self.excess_dicto, '\n\n\n')
+        return self.result, self.excess_dicto
 
 
 if __name__ == '__main__':
@@ -103,4 +103,4 @@ if __name__ == '__main__':
         if files.endswith('.DS_Store'):
             pass
         else:
-            Parse().parse(files)
+            Parser().parse(files)
