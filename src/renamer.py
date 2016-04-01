@@ -10,8 +10,6 @@ class Renamer:
         self.compteur = 0
         self.filename = None
 
-
-
     def rename(self, files):
         self.parse_file = Parser().parse(files)
         self.infos = self.parse_file[0]
@@ -23,25 +21,13 @@ class Renamer:
             except KeyError:
                 self.rename_file[self.compteur] = ''
             self.compteur +=1
-            
+
         for element in self.rename_file:
             if element == '':
                 self.rename_file.remove('')
 
         self.filename = ''.join(self.rename_file)
         print(self.filename)
-
-
-
-
-
-
-
-
-
-
-
-
 
 if __name__ == '__main__':
     path = os.listdir('/Users/Jonh/Movies/Traitement')
