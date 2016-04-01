@@ -38,7 +38,7 @@ For Parser program:
 
 ##Contact
 
->For Bug or issues.
+> Pull requests, commits or issues are welcome!
 
 * Mail: petit.jonathan16@gmail.com
 * GitHub
