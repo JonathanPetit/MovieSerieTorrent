@@ -27,8 +27,7 @@ class Parser:
         if types == 'serie' or types == 'movie':
             for key, value in enumerate(args):
                 filename = filename.replace(args[value], '')
-        if types == 'serie':
-            filename = re.sub(r'([Ss]0[Eex]0)', '', filename)
+
         elif types == 'excess':
             filename = filename.replace(args,'')
         return filename
@@ -55,7 +54,7 @@ class Parser:
             match = re.findall(self.database[value], filename)
             try:
                 if value == 'episode' or value == 'season':
-                    self.result[value] = str(int(match[0]))
+                    self.result[value] = str(match[0])
                     self.types = True
                 elif value == 'group':
                     self.group = True

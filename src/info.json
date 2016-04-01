@@ -1,6 +1,6 @@
 {
-  "season": "[Ss]?([0-9]{1,2})[Eex]",
-  "episode": "[Eex]([0-9]{1,2})",
+  "season": "([Ss]?[0-9]{1,2})[Eex]",
+  "episode": "([Eex][0-9]{1,2})",
   "year": "([\\[\\(]?(?:19[0-9]|20[012])[0-9][\\]\\)]?)",
   "languages": "FRENCH|French|french|TRUEFRENCH|VOSTFR|VOST",
   "sites": "[\\[\\s]{0,2}([Ww]{3}[.][A-Za-z0-9]+[.][a-z]{2,3})[\\]\\s]{0,2}",
