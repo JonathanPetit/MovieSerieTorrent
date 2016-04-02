@@ -1,3 +1,13 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+    Usage:
+
+    >>> from parser import Parser
+    >>> Renamer().rename(file)
+"""
+
 import os
 import json
 import re
