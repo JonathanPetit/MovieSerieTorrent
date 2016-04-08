@@ -17,9 +17,7 @@ class Parser:
     def __init__(self):
         self.types = None
         self.group = None
-        self.file = None
         self.result = None
-        self.excess_raw = None
         self.title = None
         self.excess_dico = None
         self.list_excess = ['sites', 'codec', 'resolution', 'audio', 'sub', 'group', 'excess']
@@ -55,9 +53,8 @@ class Parser:
 
     def parse(self, filename):
         self.result = {}
-
-        self.excess_raw = []
-        self.file = self._delchars(filename)
+        excess_raw = []
+        files = self._delchars(filename)
 
         # construct dict
         for key, value in enumerate(self.database):
@@ -80,26 +77,26 @@ class Parser:
             self.result['type'] = 'movie'
 
         # first delete elements
-        self.file = self._delete_element(self.file, self.result, self.result['type']).strip()
+        files = self._delete_element(files, self.result, self.result['type']).strip()
 
         # Start Process for group
         if self.group == True:
-            match_group = re.findall(self.database['group'], str(self.file))
+            match_group = re.findall(self.database['group'], str(files))
             self.result['group'] = match_group[0]
-            self.file = self._delete_element(self.file, self.result, self.result['type']).strip()
+            files = self._delete_element(files, self.result, self.result['type']).strip()
 
         # Start Process for excess elements
-        while re.search(r'([\s]{2,})', str(self.file)) != None:
-            excess = re.search(r'([\s]{2,}.+)', str(self.file)).group().strip()
-            self.excess_raw.append(excess)
-            if len(self.excess_raw) == 1:
-                self.result['excess'] = self.excess_raw[0]
+        while re.search(r'([\s]{2,})', str(files)) != None:
+            excess = re.search(r'([\s]{2,}.+)', str(files)).group().strip()
+            excess_raw.append(excess)
+            if len(excess_raw) == 1:
+                self.result['excess'] = excess_raw[0]
             else:
-                self.result['excess'] = self.excess_raw
-            self.file = self._delete_element(self.file, excess, 'excess').strip()
+                self.result['excess'] = excess_raw
+            files = self._delete_element(files, excess, 'excess').strip()
 
         #Finish Process with result(title)
-        self.result['title']= self.file.strip()
+        self.result['title']= files.strip()
 
         self.excess_dicto = self._partition(self.result)
 

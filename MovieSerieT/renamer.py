@@ -8,7 +8,7 @@
     >>> from renamer import Renamer
     >>> Renamer().rename(file)
 """
-
+from tabulate import tabulate
 from parser import Parser
 import os
 
@@ -21,16 +21,20 @@ class Renamer:
         self.compteur = 0
         self.filename = None
 
-    def rename(self, files):
+    def _list_type(self, files):
         self.parse_file = Parser().parse(files)
         self.infos = self.parse_file[0]
-        print(self.infos)
         self.excess = self.parse_file[1]
+
         if self.infos['type'] == 'serie':
             self.rename_file = ['{title}', '{season}{episode}', '-{languages}-', '.{extension}']
+            return self.rename_file
         else:
             self.rename_file = ['{title}', ' ({year})', '-{languages}-', '.{extension}']
+            return self.rename_file
 
+    def rename(self, files):
+        self.rename_file = self._list_type(files)
 
         # Build liste for filename
         for elements in self.rename_file:
@@ -47,7 +51,7 @@ class Renamer:
 
         # Rename
         self.filename = ''.join(self.rename_file)
-        return self.filename
+        return print(self.filename)
 
 if __name__ == '__main__':
     path = os.listdir('/Users/Jonh/Movies/Traitement')
