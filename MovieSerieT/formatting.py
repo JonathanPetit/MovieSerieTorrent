@@ -44,9 +44,5 @@ class Formatting:
         print(tabulate(list_serie,headers=self.headers_serie))
         print('\n')
 
-
-
-
-
 if __name__ == '__main__':
     Formatting().formatting()
