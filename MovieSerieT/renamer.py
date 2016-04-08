@@ -21,7 +21,7 @@ class Renamer:
         self.compteur = 0
         self.filename = None
 
-    def _list_type(self, files):
+    def extract(self, files):
         self.parse_file = Parser().parse(files)
         self.infos = self.parse_file[0]
         self.excess = self.parse_file[1]
@@ -34,7 +34,7 @@ class Renamer:
             return self.rename_file
 
     def rename(self, files):
-        self.rename_file = self._list_type(files)
+        self.rename_file = self.extract(files)
 
         # Build liste for filename
         for elements in self.rename_file:
