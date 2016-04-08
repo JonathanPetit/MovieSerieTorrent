@@ -30,7 +30,7 @@ Optionals informations:
 * Handler for terminal to set option
 * GUI
 
-##Small Instipration
+##Small inspiration
 
 For Parser program:
 * GitHub : [parse-torrent-name 0.1.0](https://github.com/divijbindlish/parse-torrent-name)
