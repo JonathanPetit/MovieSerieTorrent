@@ -5,13 +5,12 @@
     Usage:
 
     >>> from parser import Parser
-    >>> Renamer().rename(file)
+    >>> Parser().parser(file)
 """
 
 import os
-import json
 import re
-
+from .info import database
 
 class Parser:
     def __init__(self):
@@ -21,9 +20,7 @@ class Parser:
         self.title = None
         self.excess_dico = None
         self.list_excess = ['sites', 'codec', 'resolution', 'audio', 'sub', 'group', 'excess']
-
-        with open('info.json') as data_file:
-            self.database = json.load(data_file)
+        self.database = database
 
     def _delchars(self, filename):
         # delete chars
@@ -109,4 +106,4 @@ if __name__ == '__main__':
         if files.endswith('.DS_Store'):
             pass
         else:
-            print(Parser().parse(files))
+            Parser().parse(files)

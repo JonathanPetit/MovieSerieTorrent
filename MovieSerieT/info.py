@@ -1,4 +1,4 @@
-{
+database = { 
   "season": "([Ss]?[0-9]{1,2})[Eex]",
   "episode": "([Eex][0-9]{1,2})",
   "year": "([\\[\\(]?(?:19[0-9]|20[012])[0-9][\\]\\)]?)",
@@ -9,6 +9,6 @@
   "resolution": "([0-9]{3,4}p)",
   "audio": "(MP3|DD5\\.?1|Dual[\\- ]Audio|LiNE|DTS|AAC(?:\\.?2\\.0)?|AC3(?:\\.5\\.1)?)",
   "sub": "FASTSUB|FANSUB",
-  "group":"([A-Za-z0-9]+$)",
+  "group": "([A-Za-z0-9]+$)",
   "extension": "[\\s]{0,1}(avi|mkv)$"
 }
