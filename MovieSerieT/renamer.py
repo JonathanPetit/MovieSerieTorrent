@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 
@@ -8,12 +8,12 @@
     >>> from renamer import Renamer
     >>> Renamer().rename(file)
 """
-from tabulate import tabulate
 from parser import Parser
 import os
 
+
 class Renamer:
-    def  __init__(self):
+    def __init__(self):
         self.infos = None
         self.excess = None
         self.parse_file = None
@@ -42,7 +42,7 @@ class Renamer:
                 self.rename_file[self.compteur] = self.rename_file[self.compteur].format(**self.infos)
             except KeyError:
                 self.rename_file[self.compteur] = ''
-            self.compteur +=1
+            self.compteur += 1
 
         # Build filename
         for element in self.rename_file:
@@ -51,7 +51,7 @@ class Renamer:
 
         # Rename
         self.filename = ''.join(self.rename_file)
-        return print(self.filename)
+        return self.filename
 
 if __name__ == '__main__':
     path = os.listdir('/Users/Jonh/Movies/Traitement')
@@ -59,4 +59,4 @@ if __name__ == '__main__':
         if files.endswith('.DS_Store'):
             pass
         else:
-            Renamer().rename(files)
+            print(Renamer().rename(files))

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 """
@@ -109,4 +109,4 @@ if __name__ == '__main__':
         if files.endswith('.DS_Store'):
             pass
         else:
-            Parser().parse(files)
+            print(Parser().parse(files))
