@@ -1,9 +1,9 @@
 # MovieSerieT V0.1.0
 > Extract informations from torrents files
 
-***This library is in progress***
+***This library is in progress.***
 
-It's a python library to extract infos from a torrent filename. The parser extract a maximun infos to finnaly get the movie or serie title. The infomations store in a tuple with 2 dictonaries The program use regex to get infos. In the futur the program allow to choose options to rename files. And several other features coming soon.
+It's a python library to extract infos from a torrent filename. The parser extract a maximun infos to finnaly get the movie or serie title. The infomations store in a tuple with 2 dictonaries The program use regex to get infos. In the futur the program allow to choose options to rename files. And several other features coming soon. Later the library will be transformed in a Program
 
 ## Install
 1. ***Auto***
