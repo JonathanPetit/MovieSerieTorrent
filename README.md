@@ -3,26 +3,62 @@
 
 A python program to Parse and Rename torrents files. The parser extract a maximun informations from a torrent filename to finnaly get the title from movie or serie. The informations store in a dictonnary. The program use regex to get informations. In the futur these informations will recover to rename filename.
 
-##Informations extracted from file
+## Install
 
-For Movie and Serie:
+1. ***Auto***
+2. ***Manual***
+
+##Usage
+
+#### Import:
+```py
+from MovieSerieTorrent import *
+```
+
+#### Paser:
+> Extract infos from filename and return a tuple with 2 dictionary.
+
+```py
+Parser().parse(''[ www.CpasBien.io ] Enrages.2015.FRENCH.BDRip.XViD-FUNKKY.avi')
+#({'title': 'Enrages', 
+  'year': '2015', 
+  'languages': 'FRENCH',
+  'quality': 'BDRip', 
+  'extension': 'avi' 
+  'type': 'movie'}, 
+  
+  {'group': 'FUNKKY', 
+  'sites': 'www.CpasBien.io', 
+  'codec': 'XViD'})
+```
+First element from tuple :
 * Title
-* Year
+* Year (Movie)
 * Language
 * Extention file
 * Quality
+* Season (Serie)
+* Episode (Serie)
 
-Additionals informations for Serie:
-* Season
-* Episode
-
-Optionals informations:
+Second element: 
 * Sites download
 * Resolution
 * Audio
 * Uploader
 * Codec
 
+#### Renamer:
+> Rename file with infos extract from Parser.
+
+```py 
+Renamer().rename('[ www.CpasBien.io ] Enrages.2015.FRENCH.BDRip.XViD-FUNKKY.avi')
+#Enrages (2015)-FRENCH-.avi
+Renamer().rename('[ www.CpasBien.pw ] Blindspot.S01E03.FASTSUB.VOSTFR.HDTV.XviD-ZT.avi')
+#BlindspotS01E03-VOSTFR-.avi
+```
+
+#### Formatting:
+> Use Parser to create a tablewith files.
 
 ##Issues
 
