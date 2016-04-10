@@ -33,15 +33,15 @@ from MovieSerieTorrent import *
 ```py
 Parser().parse(''[ www.CpasBien.io ] Enrages.2015.FRENCH.BDRip.XViD-FUNKKY.avi')
 #({'title': 'Enrages', 
-  'year': '2015', 
-  'languages': 'FRENCH',
-  'quality': 'BDRip', 
-  'extension': 'avi' 
-  'type': 'movie'}, 
+#  'year': '2015', 
+#  'languages': 'FRENCH',
+#  'quality': 'BDRip', 
+#  'extension': 'avi' 
+#  'type': 'movie'}, 
   
-  {'group': 'FUNKKY', 
-  'sites': 'www.CpasBien.io', 
-  'codec': 'XViD'})
+#  {'group': 'FUNKKY', 
+#  'sites': 'www.CpasBien.io', 
+#  'codec': 'XViD'})
 ```
 First element from tuple :
 * Title
