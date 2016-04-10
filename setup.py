@@ -2,12 +2,17 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup, find_packages
 import MovieSerieT
+import os
+
+os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
+with open('requirements.txt') as f:
+    install_requires = f.read().splitlines()
 
 setup(
     name='MovieSerieTorrent',
-    version='O.1.0',
-    packages=['MovieSerieT'],
-    install_requires = ['tabulate>=O.7.5'],
+    version='0.1.1',
+    packages=find_packages(),
+    install_requires=install_requires,
     author="Petit Jonathan",
     author_email="petit.jonathan16@gmail.com",
     description="Parser and Renamer for torrents files (Movies and series)",
