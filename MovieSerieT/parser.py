@@ -10,7 +10,10 @@
 
 import os
 import re
-from info import database
+try:
+    from info import database
+except:
+    from .info import database
 
 class Parser:
     def __init__(self):
@@ -107,4 +110,3 @@ if __name__ == '__main__':
             pass
         else:
             print(Parser().parse(files))
-            

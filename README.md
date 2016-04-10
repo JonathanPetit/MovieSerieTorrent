@@ -32,15 +32,15 @@ from MovieSerieTorrent import *
 
 ```py
 Parser().parse(''[ www.CpasBien.io ] Enrages.2015.FRENCH.BDRip.XViD-FUNKKY.avi')
-#({'title': 'Enrages', 
-#  'year': '2015', 
+#({'title': 'Enrages',
+#  'year': '2015',
 #  'languages': 'FRENCH',
-#  'quality': 'BDRip', 
-#  'extension': 'avi' 
-#  'type': 'movie'}, 
-  
-#  {'group': 'FUNKKY', 
-#  'sites': 'www.CpasBien.io', 
+#  'quality': 'BDRip',
+#  'extension': 'avi'
+#  'type': 'movie'},
+
+#  {'group': 'FUNKKY',
+#  'sites': 'www.CpasBien.io',
 #  'codec': 'XViD'})
 ```
 First element from tuple :
@@ -52,7 +52,7 @@ First element from tuple :
 * Season (Serie)
 * Episode (Serie)
 
-Second element: 
+Second element:
 * Sites download
 * Resolution
 * Audio
@@ -62,7 +62,7 @@ Second element:
 #### Renamer:
 > Rename file with infos extract from Parser.
 
-```py 
+```py
 Renamer().rename('[ www.CpasBien.io ] Enrages.2015.FRENCH.BDRip.XViD-FUNKKY.avi')
 #Enrages (2015)-FRENCH-.avi
 Renamer().rename('[ www.CpasBien.pw ] Blindspot.S01E03.FASTSUB.VOSTFR.HDTV.XviD-ZT.avi')
@@ -70,7 +70,7 @@ Renamer().rename('[ www.CpasBien.pw ] Blindspot.S01E03.FASTSUB.VOSTFR.HDTV.XviD-
 ```
 
 #### Formatting:
-> Use Parser to create a table with files. 
+> Use Parser to create a table with files.
 
 ```py
 Formatting().formattting()
@@ -82,6 +82,7 @@ Formatting().formattting()
 * re (regex compilator and matcher library). [DOC](https://docs.python.org/2/library/re.html)
 * os (operating system). [DOC](https://docs.python.org/2/library/os.html)
 * tabulate (create table). [GitHub](https://github.com/gregbanks/python-tabulate)
+* colorama
 
 ##Issues
 

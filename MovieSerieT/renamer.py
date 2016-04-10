@@ -8,7 +8,11 @@
     >>> from renamer import Renamer
     >>> Renamer().rename(file)
 """
-from parser import Parser
+try:
+    from parser import Parser
+except:
+    from .parser import Parser
+
 import os
 
 
