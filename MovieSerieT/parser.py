@@ -10,7 +10,7 @@
 
 import os
 import re
-from .info import database
+from info import database
 
 class Parser:
     def __init__(self):
@@ -106,4 +106,5 @@ if __name__ == '__main__':
         if files.endswith('.DS_Store'):
             pass
         else:
-            Parser().parse(files)
+            print(Parser().parse(files))
+            

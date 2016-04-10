@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from .parser import Parser
+from parser import Parser
 
 from tabulate import tabulate
 import os
@@ -49,3 +49,4 @@ class Formatting:
 
 if __name__ == '__main__':
     Formatting().formatting()
+    
