@@ -1,4 +1,4 @@
-# MovieSerieT V0.1.0
+# MovieSerieTorrent V0.1.0
 > Extract informations from torrents files
 
 ***This library is in progress.***
