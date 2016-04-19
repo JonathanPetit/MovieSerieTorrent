@@ -10,7 +10,7 @@ It's a python library to extract infos from a torrent filename. The parser extra
 ## Install
 1. ***Auto***
   ```
-  pip install MoviSerieTorrent
+  pip install MovieSerieTorrent
   ````
 
 2. ***Manual***
