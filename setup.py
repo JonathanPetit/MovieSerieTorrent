@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from setuptools import setup, find_packages
-from MovieSerieTorrent import *
 import os
 
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
