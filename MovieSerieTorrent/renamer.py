@@ -9,6 +9,8 @@
     >>> Renamer().rename(file)
 """
 import os
+from fuzzywuzzy import fuzz
+
 try:
     from parser import Parser
 except:
@@ -56,12 +58,13 @@ class Renamer:
         self.filename = ''.join(self.rename_file)
         return self.filename
 
-
-if __name__ == '__main__':
-    path = os.listdir('/Users/Jonh/Movies/Traitement')
-    for files in path:
-        if files.endswith('.DS_Store'):
-            pass
-        else:
-            print(Renamer().preview(files))
-            print(Renamer().rename(files))
+    def renaming(self, path, filename):
+        filename = self.preview(filename)
+        for element in os.listdir(path):
+            if fuzz.token_set_ratio(filename, element) == 100:
+                path_file = os.path.join(path, element)
+                target = os.path.join(path, filename)
+                if fuzz.token_sort_ratio(element, filename) == 100:
+                    print('Already renamed file')
+                else:
+                    os.rename(path_file, target)

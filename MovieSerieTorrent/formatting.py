@@ -30,7 +30,7 @@ class Formatting:
         list_serie = []
         self.path = path
         j = 1
-        for files in self.path:
+        for files in os.listdir(self.path):
             i = 0
             self.files = self._list_for_formatting(files)
             if files.endswith('.DS_Store') == False:
@@ -56,6 +56,3 @@ class Formatting:
         print(Fore.RED + 'SERIE:')
         print(tabulate(list_serie, headers=self.headers_serie))
         print('\n')
-
-if __name__ == '__main__':
-    Formatting().formatting()

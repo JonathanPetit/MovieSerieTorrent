@@ -101,12 +101,3 @@ class Parser:
         self.excess_dicto = self._partition(self.result)
 
         return self.result, self.excess_dicto
-
-
-if __name__ == '__main__':
-    path = os.listdir('/Users/Jonh/Movies/Traitement')
-    for files in path:
-        if files.endswith('.DS_Store'):
-            pass
-        else:
-            print(Parser().parse(files))

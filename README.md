@@ -1,4 +1,4 @@
-# MovieSerieTorrent V0.1.0
+# MovieSerieTorrent V1.0.0
 > Extract informations from torrents files
 
 ***This library is in progress.***
@@ -15,10 +15,14 @@ It's a python library to extract infos from a torrent filename. The parser extra
 
   Clone repo and run setup.py in good directory.
   ```
-  git clone https://github.com/JonathanPetit/MovieSerieT.git
-  cd ../MovieSerieT
+  git clone https://github.com/JonathanPetit/MovieSerieTorrent
+  cd ../MovieSerieTorrent
   python setup.py install
   ```
+
+3. ***Verify***
+
+  Verify that you have install fuzzywuzzy --> [GitHub](https://github.com/seatgeek/fuzzywuzzy)
 
 ##Usage
 
@@ -31,7 +35,7 @@ from MovieSerieTorrent import *
 > Extract infos from filename and return a tuple with 2 dictionary.
 
 ```py
-Parser().parse(''[ www.CpasBien.io ] Enrages.2015.FRENCH.BDRip.XViD-FUNKKY.avi')
+Parser().parse('[ www.CpasBien.io ] Enrages.2015.FRENCH.BDRip.XViD-FUNKKY.avi')
 #({'title': 'Enrages',
 #  'year': '2015',
 #  'languages': 'FRENCH',
@@ -63,19 +67,32 @@ Second element:
 > Rename file with infos extract from Parser.
 
 ```py
-Renamer().rename('[ www.CpasBien.io ] Enrages.2015.FRENCH.BDRip.XViD-FUNKKY.avi')
+Renamer().preview('[ www.CpasBien.io ] Enrages.2015.FRENCH.BDRip.XViD-FUNKKY.avi')
 #Enrages (2015)-FRENCH-.avi
-Renamer().rename('[ www.CpasBien.pw ] Blindspot.S01E03.FASTSUB.VOSTFR.HDTV.XviD-ZT.avi')
+```
+Preview filename, but but does not rename
+
+```py
+path = '/Users/Jonh/Movies/'
+Renamer().renaming(path, '[ www.CpasBien.io ] Enrages.2015.FRENCH.BDRip.XViD-FUNKKY.avi')
+#Enrages (2015)-FRENCH-.avi
+Renamer().renaming(path, '[ www.CpasBien.pw ] Blindspot.S01E03.FASTSUB.VOSTFR.HDTV.XviD-ZT.avi')
 #BlindspotS01E03-VOSTFR-.avi
 ```
+Rename file in directory.
+
+```py
+Renamer().preview('[ www.CpasBien.io ] Enrages.2015.FRENCH.BDRip.XViD-FUNKKY.avi')
+#Enrages (2015)-FRENCH-.avi
 
 #### Formatting:
 > Use Parser to create a table with files.
 
 ```py
-Formatting().formattting()
+path = '/Users/Jonh/Movies/'
+Formatting().formattting(path)
 ````
-![ScreenShot](https://raw.githubusercontent.com/JonathanPetit/MovieSerieT/master/Screenshots/table.png)
+![ScreenShot](https://raw.githubusercontent.com/JonathanPetit/MovieSerieTorrent/master/Screenshots/table.png)
 
 ## Library used
 
@@ -83,10 +100,10 @@ Formatting().formattting()
 * os (operating system). [DOC](https://docs.python.org/2/library/os.html)
 * tabulate (create table). [GitHub](https://github.com/gregbanks/python-tabulate)
 * colorama
+* fuzzywuzzy (string matcher). [GitHub](https://github.com/seatgeek/fuzzywuzzy)
 
 ##Issues
 
-* Renamer file in the directory
 * Handler for terminal to set option
 * Continue GUI (tkinter)
 * Option choose path

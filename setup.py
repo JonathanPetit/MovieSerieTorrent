@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 from setuptools import setup, find_packages
-import MovieSerieT
+from MovieSerieTorrent import *
 import os
 
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
@@ -10,7 +10,7 @@ with open('requirements.txt') as f:
 
 setup(
     name='MovieSerieTorrent',
-    version='0.1.1',
+    version='1.0.0',
     packages=find_packages(),
     install_requires=install_requires,
     author="Petit Jonathan",
@@ -20,7 +20,7 @@ setup(
     include_package_data=True,
     url='https://github.com/JonathanPetit/Parser-Renamer',
     license= 'MIT',
-    keywords = 'parser renamer formatting python torrents torrent files file movie serie',
+    keywords = 'parser renamer formatting python torrents torrent files file movie serie movies series',
     classifiers=[
         "Programming Language :: Python",
         "Natural Language :: French",

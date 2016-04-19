@@ -1,10 +1,8 @@
 import os
 import sys
-import fnmatch
 
 from MovieSerieTorrent import *
 from colorama import Fore, Style, init
-from fuzzywuzzy import *
 from fuzzywuzzy import fuzz
 
 
@@ -27,10 +25,10 @@ def ask_rename():
     return response
 
 
-def set_rename(element):
+def set_rename(filename):
     response = ask_rename()
     if response == 'y':
-        catch_me_if_you_can(Renamer().preview(element))
+        catch_me_if_you_can(Renamer().preview(filename))
     elif response == 'q':
         sys.exit(0)
         init(autoreset=True)
@@ -40,10 +38,13 @@ def set_rename(element):
 
 def catch_me_if_you_can(filename):
     for element in os.listdir(directory):
-        if fuzz.token_set_ratio(Renamer().preview(filename), element) == 100:
+        if fuzz.token_set_ratio(filename, element) == 100:
             path = os.path.join(directory, element)
-            target = os.path.join(directory, Renamer().preview(element))
-            os.rename(path, target)
+            target = os.path.join(directory, filename)
+            print(path)
+            print(target)
+            print('Successfully renamed.')
+            #os.rename(path, target)
 
 
 if __name__ == '__main__':
