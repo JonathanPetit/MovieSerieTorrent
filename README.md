@@ -24,7 +24,7 @@ It's a python library to extract infos from a torrent filename. The parser extra
 
 3. ***Verify***
 
-  Verify that you have install fuzzywuzzy --> [GitHub](https://github.com/seatgeek/fuzzywuzzy)
+  Verify that you have install fuzzywuzzy correctly --> [GitHub](https://github.com/seatgeek/fuzzywuzzy)
 
 ##Usage
 
