@@ -92,12 +92,12 @@ Formatting().formattting(path)
 ````
 ![ScreenShot](https://raw.githubusercontent.com/JonathanPetit/MovieSerieTorrent/master/Screenshots/table.png)
 
-## Library used
+## Library used. 
 
 * re (regex compilator and matcher library). [DOC](https://docs.python.org/2/library/re.html)
 * os (operating system). [DOC](https://docs.python.org/2/library/os.html)
 * tabulate (create table). [GitHub](https://github.com/gregbanks/python-tabulate)
-* colorama
+* colorama (color in terminal) [GitHub](https://github.com/tartley/colorama)
 * fuzzywuzzy (string matcher). [GitHub](https://github.com/seatgeek/fuzzywuzzy)
 
 ##Issues
