@@ -81,10 +81,6 @@ Renamer().renaming(path, '[ www.CpasBien.pw ] Blindspot.S01E03.FASTSUB.VOSTFR.HD
 ```
 Rename file in directory.
 
-```py
-Renamer().preview('[ www.CpasBien.io ] Enrages.2015.FRENCH.BDRip.XViD-FUNKKY.avi')
-#Enrages (2015)-FRENCH-.avi
-
 #### Formatting:
 > Use Parser to create a table with files.
 
