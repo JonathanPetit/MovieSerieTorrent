@@ -1,4 +1,6 @@
 # MovieSerieTorrent V1.0.0
+[![PyPI version](https://badge.fury.io/py/MovieSerieTorrent.svg)](https://badge.fury.io/py/MovieSerieTorrent/)
+[![pypi downloads](https://img.shields.io/pypi/dm/MovieSerieTorrent.svg)](https://pypi.python.org/pypi/MovieSerieTorrent/)
 > Extract informations from torrents files
 
 ***This library is in progress.***
@@ -105,11 +107,6 @@ Formatting().formattting(path)
 * Option choose path
 * Imdb search for movie and serie to rename better.
 * Unit tests
-
-##Sources of inspiration
-
-For Parser program (Inspiration):
-* GitHub : [parse-torrent-name](https://github.com/divijbindlish/parse-torrent-name)
 
 ##Contact
 > Pull requests, commits or issues are welcome!
