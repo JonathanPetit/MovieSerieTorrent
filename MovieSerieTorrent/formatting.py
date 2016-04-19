@@ -16,7 +16,7 @@ class Formatting:
         self.table = None
         self.infos = None
         init(autoreset=True)
-        
+
     def _list_for_formatting(self, files):
         parse_file = Parser().parse(files)
         self.infos = parse_file[0]
@@ -50,7 +50,6 @@ class Formatting:
             files.insert(0, j)
             j += 1
 
-        print('\n')
         print(Fore.RED + 'MOVIE:')
         print(tabulate(list_movies, headers=self.headers_movie))
         print('\n')

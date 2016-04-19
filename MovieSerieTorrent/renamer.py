@@ -8,12 +8,11 @@
     >>> from renamer import Renamer
     >>> Renamer().rename(file)
 """
+import os
 try:
     from parser import Parser
 except:
     from .parser import Parser
-
-import os
 
 
 class Renamer:
@@ -37,7 +36,7 @@ class Renamer:
             self.rename_file = ['{title}', ' ({year})', '-{languages}-', '.{extension}']
             return self.rename_file
 
-    def rename(self, files):
+    def preview(self, files):
         self.rename_file = self.extract(files)
 
         # Build liste for filename
@@ -57,10 +56,12 @@ class Renamer:
         self.filename = ''.join(self.rename_file)
         return self.filename
 
+
 if __name__ == '__main__':
     path = os.listdir('/Users/Jonh/Movies/Traitement')
     for files in path:
         if files.endswith('.DS_Store'):
             pass
         else:
+            print(Renamer().preview(files))
             print(Renamer().rename(files))

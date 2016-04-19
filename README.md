@@ -75,7 +75,7 @@ Renamer().rename('[ www.CpasBien.pw ] Blindspot.S01E03.FASTSUB.VOSTFR.HDTV.XviD-
 ```py
 Formatting().formattting()
 ````
-![ScreenShot](https://raw.githubusercontent.com/JonathanPetit/MovieSerieT/master/doc/table.png)
+![ScreenShot](https://raw.githubusercontent.com/JonathanPetit/MovieSerieT/master/Screenshots/table.png)
 
 ## Library used
 
@@ -91,6 +91,7 @@ Formatting().formattting()
 * Continue GUI (tkinter)
 * Option choose path
 * Imdb search for movie and serie to rename better.
+* Unit tests
 
 ##Sources of inspiration
 
