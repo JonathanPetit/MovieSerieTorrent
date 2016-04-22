@@ -1,8 +1,9 @@
 MovieSerieTorrent
 =================
 
-|PyPI version| |pypi downloads| > Extract informations from torrents
-files
+|PyPI version| |pypi downloads|
+
+> Extract informations from torrents files
 
 ***This library is in progress.***
 
@@ -16,12 +17,15 @@ will be transformed in a Program
 Install
 -------
 
-1. ***Auto*** \`\`\` pip install MovieSerieTorrent \`\`\`\`
+1. **Auto**
+`` pip install MovieSerieTorrent ``
 
-2. ***Manual***
+2. **Manual**
 
 Clone repo and run setup.py in good directory.
-``git clone https://github.com/JonathanPetit/MovieSerieTorrent   cd ../MovieSerieTorrent   python setup.py install``
+``git clone https://github.com/JonathanPetit/MovieSerieTorrent
+cd ../MovieSerieTorrent
+python setup.py install``
 
 3. ***Verify***
 
@@ -98,7 +102,7 @@ Formatting:
 .. figure:: https://raw.githubusercontent.com/JonathanPetit/MovieSerieTorrent/master/Screenshots/table.png
    :alt: ScreenShot
 
-   ScreenShot
+
 
 Library used.
 -------------
