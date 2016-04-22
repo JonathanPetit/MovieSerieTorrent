@@ -7,22 +7,18 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 with open('requirements.txt') as requirements:
     install_requires = requirements.read().splitlines()
 
-try:
-    from pypandoc import convert
-    read_md = lambda f: convert(f, 'rst')
-except ImportError:
-    print("warning: pypandoc module not found, could not convert Markdown to RST")
-    read_md = lambda f: open(f, 'r').read()
+if os.path.exists('README.txt'):
+    long_description = open('README.txt').read()
 
 setup(
     name='MovieSerieTorrent',
-    version='1.0.0',
+    version='1.0.1register.py',
     packages=find_packages(),
     install_requires=install_requires,
     author="Petit Jonathan",
     author_email="petit.jonathan16@gmail.com",
     description="Parser and Renamer for torrents files (Movies and series)",
-    long_description=read_md('README.md'),
+    long_description=long_description,
     include_package_data=True,
     url='https://github.com/JonathanPetit/Parser-Renamer',
     license= 'MIT',
