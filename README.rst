@@ -3,7 +3,7 @@ MovieSerieTorrent
 
 |PyPI version| |pypi downloads|
 
-> Extract informations from torrents files
+    Extract informations from torrents files
 
 ***This library is in progress.***
 
@@ -18,16 +18,22 @@ Install
 -------
 
 1. **Auto**
-`` pip install MovieSerieTorrent ``
+
+.. code:: py
+
+    pip install MovieSerieTorrent 
 
 2. **Manual**
 
 Clone repo and run setup.py in good directory.
-``git clone https://github.com/JonathanPetit/MovieSerieTorrent
-cd ../MovieSerieTorrent
-python setup.py install``
 
-3. ***Verify***
+.. code:: py
+
+    git clone https://github.com/JonathanPetit/MovieSerieTorrent
+    cd ../MovieSerieTorrent
+    python setup.py install``
+
+3. **Verify**
 
 Verify that you have install fuzzywuzzy correctly -->
 `GitHub <https://github.com/seatgeek/fuzzywuzzy>`__
