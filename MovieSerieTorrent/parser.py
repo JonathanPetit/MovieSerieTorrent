@@ -109,7 +109,7 @@ class Parser:
 
         #replace differents elements
         try:
-            if self.result['languages'] == 'TRUEFRENCH' or 'french' or 'French':
+            if self.result['languages'] == 'TRUEFRENCH' or self.result['languages'] =='french' or self.result['languages'] =='French':
                 self.result['languages'] = 'FRENCH'
         except KeyError:
             pass

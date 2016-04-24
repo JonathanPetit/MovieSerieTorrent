@@ -19,7 +19,7 @@ except OSError:
 
 setup(
     name='MovieSerieTorrent',
-    version='1.0.13',
+    version='1.0.14',
     packages=find_packages(),
     install_requires=install_requires,
     author="Petit Jonathan",

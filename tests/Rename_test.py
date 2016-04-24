@@ -17,6 +17,7 @@ class Renamer_test(unittest.TestCase):
 
         for torrents_name, result_expect in zip(torrents_name, result_expect):
             preview = Renamer().preview(torrents_name)
+            print(preview)
             self.assertEqual(preview, result_expect)
 
 if __name__ == '__main__':

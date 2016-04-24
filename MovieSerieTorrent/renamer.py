@@ -32,7 +32,7 @@ class Renamer:
         self.excess = self.parse_file[1]
 
         if self.infos['type'] == 'serie':
-            self.rename_file = ['{title}', ' {season}{episode} ', '-{languages}-', '{quality}', '.{extension}']
+            self.rename_file = ['{title}', '\s{season}{episode}\s', '-{languages}-', '{quality}', '.{extension}']
             return self.rename_file
         else:
             self.rename_file = ['{title}', ' {Part}', ' ({year})', '-{languages}-', '{quality}', '.{extension}']
