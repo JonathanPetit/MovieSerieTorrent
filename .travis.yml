@@ -3,10 +3,11 @@ python:
   - "3.3"
 
 install:
+  - "pip install ."
   - "pip install MovieSerieTorrent"
   - "pip install tabulate"
   - "pip install python-Levenshtein"
   - "pip install fuzzywuzzy"
-  - "pip install ."
+
 
 script: "python3 tests/Renamer/Rename_test.py"
