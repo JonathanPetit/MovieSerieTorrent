@@ -10,9 +10,9 @@ from MovieSerieTorrent import *
 
 class Renamer_test(unittest.TestCase):
     def test_renamer(self):
-        with open('input_rename.json') as input_file:
+        with open(os.path.join(os.path.dirname(__file__), 'input.json')) as input_file:
             torrents_name = json.load(input_file)
-        with open('ouput_rename.json') as output_file:
+        with open(os.path.join(os.path.dirname(__file__), 'output.json')) as output_file:
             result_expect = json.load(output_file)
 
         for torrents_name, result_expect in zip(torrents_name, result_expect):
