@@ -65,4 +65,4 @@ class Renamer:
                 path_file = os.path.join(path, element)
                 target = os.path.join(path, filename)
                 print(filename)
-                #os.rename(path_file, target)
+                os.rename(path_file, target)
