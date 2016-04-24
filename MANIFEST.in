@@ -1,9 +1,9 @@
 include LICENSE
 include MANIFEST.in
-include MovieSerieT/*.json
 include README.md
 include requirements.txt
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
+include tests/files/*.json
 
 recursive-include docs *.rst conf.py Makefile make.bat
