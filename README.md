@@ -1,5 +1,5 @@
 # MovieSerieTorrent 
-[![Build status](https://travis-ci.org/JonathanPetit/MovieSerieTorrent.svg?branch=master)
+![Build status](https://travis-ci.org/JonathanPetit/MovieSerieTorrent.svg?branch=master)
 [![PyPI version](https://badge.fury.io/py/MovieSerieTorrent.svg)](https://badge.fury.io/py/MovieSerieTorrent/)
 [![pypi downloads](https://img.shields.io/pypi/dm/MovieSerieTorrent.svg)](https://pypi.python.org/pypi/MovieSerieTorrent/)
 > Extract informations from torrents files
