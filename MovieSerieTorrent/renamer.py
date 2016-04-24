@@ -32,10 +32,10 @@ class Renamer:
         self.excess = self.parse_file[1]
 
         if self.infos['type'] == 'serie':
-            self.rename_file = ['{title}', '{season}{episode}', '-{languages}-', '{quality}', '.{extension}']
+            self.rename_file = ['{title}', ' {season}{episode} ', '-{languages}-', '{quality}', '.{extension}']
             return self.rename_file
         else:
-            self.rename_file = ['{title}', ' ({year})', '-{languages}-', '{quality}', '.{extension}']
+            self.rename_file = ['{title}', ' {Part}', ' ({year})', '-{languages}-', '{quality}', '.{extension}']
             return self.rename_file
 
     def preview(self, files):
@@ -56,7 +56,7 @@ class Renamer:
 
         # Rename
         self.filename = ''.join(self.rename_file)
-        return self.filename
+        return print(self.filename)
 
     def renaming(self, path, filename):
         filename = self.preview(filename)
@@ -64,5 +64,4 @@ class Renamer:
             if fuzz.token_set_ratio(filename, element) == 100:
                 path_file = os.path.join(path, element)
                 target = os.path.join(path, filename)
-                print(filename)
                 os.rename(path_file, target)

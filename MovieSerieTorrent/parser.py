@@ -36,7 +36,7 @@ class Parser:
             for key, value in enumerate(args):
                 filename = filename.replace(args[value], '')
 
-        elif types == 'excess':
+        elif types == 'excess' or types == 'part':
             filename = filename.replace(args,'')
         return filename
 
@@ -98,7 +98,20 @@ class Parser:
 
         #Finish Process with result(title)
         self.result['title']= files.strip()
+        search_part = re.search(r'(((Part|part|PART)?[\s]?[1-9]{1,2})|[XIV]+)$', self.result['title'])
+
+        if search_part is not None:
+            search_part = search_part.group().strip()
+            self.result['Part'] = search_part
+            self.result['title'] = self.result['title'].replace(search_part, '').strip()
 
         self.excess_dicto = self._partition(self.result)
+
+        #replace differents elements
+        try:
+            if self.result['languages'] == 'TRUEFRENCH' or 'french' or 'French':
+                self.result['languages'] = 'FRENCH'
+        except KeyError:
+            pass
 
         return self.result, self.excess_dicto

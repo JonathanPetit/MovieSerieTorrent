@@ -11,7 +11,7 @@ import os
 
 class Formatting:
     def __init__(self):
-        self.headers_movie =self.headers = ['N°', 'Title', 'Year', 'Language', 'Quality']
+        self.headers_movie =self.headers = ['N°', 'Title', 'Part', 'Year', 'Language', 'Quality']
         self.headers_serie = ['N°', 'Title', 'Season', 'Episode', 'Language', 'Quality']
         self.table = None
         self.infos = None
@@ -23,7 +23,7 @@ class Formatting:
         if self.infos['type'] == 'serie':
             return ['{title}', '{season}', '{episode}', '{languages}', '{quality}']
         else:
-            return ['{title}', '{year}', '{languages}', '{quality}']
+            return ['{title}', '{Part}', '{year}', '{languages}', '{quality}']
 
     def formatting(self, path):
         list_movies = []
