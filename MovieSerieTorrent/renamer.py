@@ -9,7 +9,6 @@
     >>> Renamer().rename(file)
 """
 import os
-import re
 from fuzzywuzzy import fuzz
 
 try:
@@ -33,10 +32,10 @@ class Renamer:
         self.excess = self.parse_file[1]
 
         if self.infos['type'] == 'serie':
-            self.rename_file = ['{title}', '{season}{episode}', '-{languages}-', '.{extension}']
+            self.rename_file = ['{title}', '{season}{episode}', '-{languages}-', '{quality}', '.{extension}']
             return self.rename_file
         else:
-            self.rename_file = ['{title}', ' ({year})', '-{languages}-', '.{extension}']
+            self.rename_file = ['{title}', ' ({year})', '-{languages}-', '{quality}', '.{extension}']
             return self.rename_file
 
     def preview(self, files):
@@ -65,4 +64,5 @@ class Renamer:
             if fuzz.token_set_ratio(filename, element) == 100:
                 path_file = os.path.join(path, element)
                 target = os.path.join(path, filename)
-                os.rename(path_file, target)
+                print(filename)
+                #os.rename(path_file, target)

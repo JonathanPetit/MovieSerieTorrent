@@ -2,7 +2,7 @@ import json
 import os
 import unittest
 
-from MovieSerieTorrent import Renamer
+from MovieSerieTorrent import *
 
 
 class Renamer_test(unittest.TestCase):
