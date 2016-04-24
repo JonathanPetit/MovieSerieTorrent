@@ -82,12 +82,13 @@ class Parser:
         # Start Process for group
         if self.group == True:
             match_group = re.findall(self.database['group'], str(files))
-            self.result['group'] = match_group[0]
-            files = self._delete_element(files, self.result, self.result['type']).strip()
+            if len(match_group) != 0:
+                self.result['group'] = match_group[0]
+                files = self._delete_element(files, self.result, self.result['type']).strip()
 
         # Start Process for excess elements
         while re.search(r'([\s]{2,})', str(files)) != None:
-            excess = re.search(r'([\s]{2,}.+)', str(files)).group().strip()
+            excess = re.search(r'[\s]{2,}(.+)', str(files)).group().strip()
             excess_raw.append(excess)
             if len(excess_raw) == 1:
                 self.result['excess'] = excess_raw[0]

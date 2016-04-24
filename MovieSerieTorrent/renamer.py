@@ -9,6 +9,7 @@
     >>> Renamer().rename(file)
 """
 import os
+import re
 from fuzzywuzzy import fuzz
 
 try:
@@ -64,7 +65,4 @@ class Renamer:
             if fuzz.token_set_ratio(filename, element) == 100:
                 path_file = os.path.join(path, element)
                 target = os.path.join(path, filename)
-                if fuzz.token_sort_ratio(element, filename) == 100:
-                    print('Already renamed file')
-                else:
-                    os.rename(path_file, target)
+                os.rename(path_file, target)

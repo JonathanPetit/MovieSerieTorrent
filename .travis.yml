@@ -1,0 +1,8 @@
+language: python
+python:
+  - "3.3"
+
+install:
+  - "pip install ."
+
+script: "python3 tests/Rename_parse.py"
