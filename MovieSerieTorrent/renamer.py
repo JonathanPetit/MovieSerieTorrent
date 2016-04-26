@@ -56,7 +56,7 @@ class Renamer:
 
         # Rename
         self.filename = ''.join(self.rename_file)
-        return print(self.filename)
+        return self.filename
 
     def renaming(self, path, filename):
         filename = self.preview(filename)
