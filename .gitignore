@@ -1,6 +1,7 @@
 test.py
 README.rst
 GUI.py
+Appli/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
